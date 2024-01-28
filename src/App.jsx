@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { intervalToDuration, isBefore, parseISO } from "date-fns";
+import { intervalToDuration, isAfter, isBefore, parseISO } from "date-fns";
 import { useForm } from "react-hook-form";
 import CountUp from "react-countup";
 
@@ -144,7 +144,13 @@ function App() {
         </Card>
       </Grid>
       {different && (
-        <Grid item container xs={12} mt={1}>
+        <Grid item container xs={12} spacing={1} rowSpacing={1}>
+          <Grid item xs={12}>
+            <Typography variant="h4" textAlign={"center"}>
+              🗓️ Get ready for the big day! Only:
+            </Typography>
+          </Grid>
+
           <Grid item container xs={4}>
             <Button variant="outlined" fullWidth>
               <Grid container>
@@ -179,7 +185,6 @@ function App() {
               </Grid>
             </Button>
           </Grid>
-
           <Grid item container xs={4}>
             <Button variant="outlined" fullWidth>
               <Grid container>
